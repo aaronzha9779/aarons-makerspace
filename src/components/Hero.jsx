@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { profile } from '../data/profile.js'
 
 export default function Hero() {
@@ -19,18 +20,18 @@ export default function Hero() {
       </h1>
 
       <div className="flex flex-wrap items-center gap-4 mt-9">
-        <a
-          href="/#work"
+        <Link
+          to="/#work"
           className="font-mono text-[13px] bg-orange text-white px-4 py-2.5 rounded-sm hover:opacity-90 transition-opacity"
         >
           See the work
-        </a>
-        <a
-          href="/#about"
+        </Link>
+        <Link
+          to="/about"
           className="font-mono text-[13px] text-inkdim hover:text-ink transition-colors"
         >
-          Read the statement &rarr;
-        </a>
+          about me &rarr;
+        </Link>
       </div>
 
       <div className="hidden md:block absolute right-10 bottom-8 font-mono text-[11px] text-inkdim text-right leading-loose">
