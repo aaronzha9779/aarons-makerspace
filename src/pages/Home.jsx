@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Hero from '../components/Hero.jsx'
-import Interests from '../components/Interests.jsx'
-import Statement from '../components/Statement.jsx'
 import Experience from '../components/Experience.jsx'
 import Contact from '../components/Contact.jsx'
 import Footer from '../components/Footer.jsx'
@@ -16,7 +14,6 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
-      <Interests />
 
       <section id="work" className="px-6 md:px-10 py-20 border-b border-rule scroll-mt-20">
         <div className="flex items-baseline justify-between mb-10">
@@ -35,7 +32,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Statement />
       <Experience />
       <Contact />
       <Footer />

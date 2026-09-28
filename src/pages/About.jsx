@@ -1,6 +1,5 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import Experience from '../components/Experience.jsx'
 import Interests from '../components/Interests.jsx'
 import { profile } from '../data/profile.js'
 
@@ -25,7 +24,6 @@ export default function About() {
           </div>
         </section>
         <Interests />
-        <Experience />
       </main>
       <Footer />
     </>
