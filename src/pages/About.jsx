@@ -14,7 +14,7 @@ export default function About() {
             <div className="max-w-2xl">
               <p className="font-mono text-xs text-inkdim mb-5">{profile.location}</p>
               <h1 className="font-display font-bold text-4xl md:text-6xl leading-[0.95] tracking-tight">
-                Engineer by practice.<br />Artist by instinct.
+                Engineer in mind.<br />Artist at heart.
               </h1>
               <div className="mt-10 space-y-5 text-inkdim leading-relaxed max-w-prose">
                 <p>{profile.statementProfessional}</p>

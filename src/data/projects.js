@@ -21,7 +21,7 @@ export const projects = [
     slug: 'flight-controller',
     idx: 'P-01',
     category: 'engineering',
-    // Optional uniform card image, e.g. `${import.meta.env.BASE_URL}assets/project-cover.jpg`
+    // Optional card image. Its natural aspect ratio is preserved in the portfolio gallery.
     cover: null,
     title: 'Autonomous flight controller',
     summary: 'Custom PID-tuned flight controller for a 900g quadcopter, built on a bare STM32.',

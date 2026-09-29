@@ -14,11 +14,12 @@ export const profile = {
 
   // Public assets must include Vite's configured base path when deployed to GitHub Pages.
   resumeUrl: `${import.meta.env.BASE_URL}assets/Aaron_ZhangResume.pdf`,
+  resumeLogoUrl: `${import.meta.env.BASE_URL}assets/Resume_Logo.png`,
   email: 'aaronzha@umich.edu',
 
   socials: [
     { label: 'GitHub', url: 'https://github.com/aaronzha9779', icon: 'github' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/aaron-zhang-813023344/', icon: 'linkedin' },
-    { label: 'Instagram', url: 'https://instagram.com/yourhandle', icon: 'instagram' },
+    { label: 'Instagram', url: 'https://instagram.com/aaron_zhang7', icon: 'instagram' },
   ],
 }

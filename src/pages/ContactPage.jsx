@@ -12,11 +12,11 @@ export default function ContactPage() {
           <section>
             <div className="font-mono text-xs text-orange mb-8">02 / CONTACT</div>
             <h1 className="font-display font-bold text-4xl md:text-6xl leading-[0.95] tracking-tight max-w-2xl">
-              Start with a good question.
+              got a good question? 
             </h1>
             <p className="text-inkdim leading-relaxed max-w-xl mt-8">
-              For collaborations, project conversations, or a thoughtful note, email is the best place to start.
-              Include a little context and I&apos;ll get back to you soon.
+              For collaborations, project ideas, or technical questions, reach out. I never let a good idea slip away. 
+              Include a little context, a hint of curiosity, and I&apos;ll be sure to get back to you soon.
             </p>
             <a
               href={`mailto:${profile.email}`}
@@ -35,7 +35,10 @@ export default function ContactPage() {
                 rel="noreferrer"
                 className="flex items-center justify-between border-b border-rule py-3 text-sm hover:text-orange transition-colors"
               >
-                <span>Resume</span>
+                <span className="flex items-center gap-3">
+                  <img src={profile.resumeLogoUrl} alt="" className="h-6 w-6 object-contain" />
+                  Resume
+                </span>
                 <span aria-hidden="true">↗</span>
               </a>
               {profile.socials.map((social) => (

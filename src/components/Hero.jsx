@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="flex flex-wrap items-center gap-4 mt-9">
         <Link
-          to="/#work"
+          to="/work"
           className="font-mono text-[13px] bg-orange text-white px-4 py-2.5 rounded-sm hover:opacity-90 transition-opacity"
         >
           See the work
@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="hidden md:block absolute right-10 bottom-8 font-mono text-[11px] text-inkdim text-right leading-loose">
         {profile.location.toUpperCase()}
         <br />
-        REV 04 &mdash; 2026
+        
       </div>
     </section>
   )

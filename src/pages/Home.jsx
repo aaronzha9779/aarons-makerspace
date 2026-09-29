@@ -19,7 +19,7 @@ export default function Home() {
 
       <section id="work" className="px-6 md:px-10 py-20 border-b border-rule scroll-mt-20">
         <div className="flex items-baseline justify-between mb-10">
-          <h2 className="font-display font-bold text-2xl md:text-3xl">Selected work</h2>
+          <h2 className="font-display font-bold text-xl md:text-2xl">Projects</h2>
           <Link
             to="/work"
             className="font-mono text-xs text-inkdim hover:text-orange transition-colors"
@@ -27,7 +27,7 @@ export default function Home() {
             full portfolio &rarr;
           </Link>
         </div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-px bg-rule border border-rule">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-4">
           {featured.map((p) => (
             <ProjectCard key={p.slug} project={p} />
           ))}
