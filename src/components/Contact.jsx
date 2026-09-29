@@ -8,7 +8,7 @@ export default function Contact() {
           Building something, hiring, or got an idea?
         </h2>
         <p className="text-inkdim mb-8">
-          Email me below for any inquiries, creative or professional.
+          Email me below for any inquiries, creative or professional, and I'll get back to you super soon!
         </p>
         <a
           href={`mailto:${profile.email}`}

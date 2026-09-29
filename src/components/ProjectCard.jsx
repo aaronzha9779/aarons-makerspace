@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 export default function ProjectCard({ project }) {
   const [open, setOpen] = useState(false)
+  const fallbackTones = ['bg-[#354b4b]', 'bg-[#594335]', 'bg-[#3e3951]']
+  const fallbackTone = fallbackTones[Number(project.idx?.replace(/\D/g, '')) % fallbackTones.length]
 
   return (
     <div className="bg-bg hover:bg-surface transition-colors p-7">
@@ -12,6 +14,15 @@ export default function ProjectCard({ project }) {
         className="w-full text-left"
         aria-expanded={open}
       >
+        <div className={`relative mb-5 aspect-video overflow-hidden rounded-sm ${project.cover ? 'bg-surface' : fallbackTone}`}>
+          {project.cover ? (
+            <img src={project.cover} alt="" className="size-full object-cover" />
+          ) : (
+            <div className="absolute inset-0 flex items-end p-4">
+              <span className="font-mono text-xs tracking-[0.16em] text-white/70">{project.idx}</span>
+            </div>
+          )}
+        </div>
         <div className="flex justify-between items-start">
           <div className="font-mono text-xs text-orange">{project.idx}</div>
           <span className="font-mono text-xs text-inkdim">{open ? '\u2212' : '+'}</span>

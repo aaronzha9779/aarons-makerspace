@@ -4,7 +4,7 @@ export const profile = {
 
   logoUrl: `${import.meta.env.BASE_URL}assets/AZlogo.png`,
   roles: ['Artist', 'Engineer', 'Designer', 'Student @ UMich'],
-  tagline: 'I build systems that move \u2014 and paint the things that don\u2019t need to.',
+  tagline: 'I solve problems and create to serve the soul.',
   location: 'Chicago, IL | Ann Arbor, MI',
 
   statementProfessional:

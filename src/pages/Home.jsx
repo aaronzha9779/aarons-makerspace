@@ -5,10 +5,12 @@ import Experience from '../components/Experience.jsx'
 import Contact from '../components/Contact.jsx'
 import Footer from '../components/Footer.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
-import { projects } from '../data/projects.js'
+import { projects, selectedProjectSlugs } from '../data/projects.js'
 
 export default function Home() {
-  const featured = projects.slice(0, 3)
+  const featured = selectedProjectSlugs
+    .map((slug) => projects.find((project) => project.slug === slug))
+    .filter(Boolean)
 
   return (
     <>

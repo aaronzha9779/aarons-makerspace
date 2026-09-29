@@ -39,9 +39,6 @@ export default function Nav() {
         <li>
           <Link to="/contact" className="hover:text-ink transition-colors">contact</Link>
         </li>
-        <li>
-          <Link to="/inspiration" className="hover:text-ink transition-colors">inspiration</Link>
-        </li>
       </ul>
 
       <div className="flex shrink-0 items-center gap-4 md:ml-10">

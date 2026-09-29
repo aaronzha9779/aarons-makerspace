@@ -2,10 +2,27 @@
 // the homepage grid, the full portfolio page, and the detail pages all read
 // from this array automatically.
 
+export const portfolioCategories = [
+  { id: 'engineering', title: 'Engineering', description: 'Systems, hardware, and experiments built to be tested.' },
+  { id: 'visual-art', title: 'Visual Art', description: 'Paintings, studies, and visual investigations.' },
+  { id: 'apps', title: 'Apps', description: 'Digital tools, interfaces, and small internet artifacts.' },
+]
+
+// Home page pins: change this list to choose and order the work shown in
+// the "Selected work" section. Use project slugs from the array below.
+export const selectedProjectSlugs = [
+  'flight-controller',
+  'gimbal',
+  'regen-braking-rig',
+]
+
 export const projects = [
   {
     slug: 'flight-controller',
     idx: 'P-01',
+    category: 'engineering',
+    // Optional uniform card image, e.g. `${import.meta.env.BASE_URL}assets/project-cover.jpg`
+    cover: null,
     title: 'Autonomous flight controller',
     summary: 'Custom PID-tuned flight controller for a 900g quadcopter, built on a bare STM32.',
     caption: 'Bare-metal firmware, no flight-stack shortcuts.',
@@ -27,6 +44,8 @@ export const projects = [
   {
     slug: 'gimbal',
     idx: 'P-02',
+    category: 'engineering',
+    cover: null,
     title: 'Modular 3-axis gimbal',
     summary: 'Camera stabilization rig with brushless direct-drive motors and a custom IMU fusion filter.',
     caption: 'Direct-drive, no gearing to introduce backlash.',
@@ -45,6 +64,8 @@ export const projects = [
   {
     slug: 'regen-braking-rig',
     idx: 'P-03',
+    category: 'engineering',
+    cover: null,
     title: 'Regen braking test rig',
     summary: 'Benchtop dynamometer for validating regenerative braking efficiency on small EV drivetrains.',
     caption: 'Built to answer one question: where does the energy actually go.',

@@ -65,15 +65,28 @@ export default function ProjectDetail() {
           ))}
         </div>
 
+        <section className="mb-10 max-w-prose">
+          <h2 className="font-mono text-xs text-orange">PURPOSE</h2>
+          <p className="mt-3 leading-relaxed text-inkdim">{project.purpose || project.summary}</p>
+        </section>
+
         {project.notes && (
-          <p className="text-inkdim leading-relaxed max-w-prose mb-10">{project.notes}</p>
+          <section className="mb-10 max-w-prose">
+            <h2 className="font-mono text-xs text-orange">CREATIVE PROCESS</h2>
+            <p className="mt-3 leading-relaxed text-inkdim">{project.process || project.notes}</p>
+          </section>
         )}
 
-        {/* Drop images/video for this project into /public/assets and reference them
-            in projects.js, then render project.media here, e.g.:
-            {project.media.map(m => m.type === 'video'
-              ? <video key={m.src} src={m.src} controls className="mt-10 w-full rounded" />
-              : <img key={m.src} src={m.src} className="mt-10 w-full rounded" />) } */}
+        {project.media?.length > 0 && (
+          <section className="space-y-5">
+            <h2 className="font-mono text-xs text-orange">MEDIA</h2>
+            {project.media.map((media) => (
+              media.type === 'video'
+                ? <video key={media.src} src={media.src} controls className="w-full rounded-sm" />
+                : <img key={media.src} src={media.src} alt="" className="w-full rounded-sm" />
+            ))}
+          </section>
+        )}
       </div>
       <Footer />
     </>
