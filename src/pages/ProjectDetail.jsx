@@ -6,6 +6,7 @@ import { projects } from '../data/projects.js'
 export default function ProjectDetail() {
   const { slug } = useParams()
   const project = projects.find((p) => p.slug === slug)
+  const specs = Object.entries(project?.specs || {})
 
   if (!project) {
     return (
@@ -56,14 +57,16 @@ export default function ProjectDetail() {
           ))}
         </div>
 
-        <div className="border-t border-rule pt-6 font-mono text-sm max-w-sm mb-10">
-          {Object.entries(project.specs).map(([label, value]) => (
-            <div key={label} className="flex justify-between text-inkdim mb-2.5">
-              <span>{label}</span>
-              <b className="text-orange font-normal">{value}</b>
-            </div>
-          ))}
-        </div>
+        {specs.length > 0 && (
+          <div className="border-t border-rule pt-6 font-mono text-sm max-w-sm mb-10">
+            {specs.map(([label, value]) => (
+              <div key={label} className="flex justify-between text-inkdim mb-2.5">
+                <span>{label}</span>
+                <b className="text-orange font-normal">{value}</b>
+              </div>
+            ))}
+          </div>
+        )}
 
         <section className="mb-10 max-w-prose">
           <h2 className="font-mono text-xs text-orange">PURPOSE</h2>
