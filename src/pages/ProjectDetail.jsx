@@ -45,7 +45,7 @@ export default function ProjectDetail() {
             rel="noreferrer"
             className="inline-block font-mono text-[12.5px] underline underline-offset-4 hover:text-orange mb-6"
           >
-            View repo / writeup
+            {project.linkLabel || 'View repo / writeup'}
           </a>
         )}
 

@@ -21,10 +21,12 @@ export default function About() {
                 <p>{profile.statementPersonal}</p>
               </div>
             </div>
-            <div className="aspect-[3/4] w-full max-w-xs border border-dashed border-rule bg-surface p-4 md:justify-self-start">
-              <div className="flex size-full items-end">
-                <span className="font-mono text-[11px] text-inkdim">PORTRAIT / ADD IMAGE</span>
-              </div>
+            <div className="aspect-[3/4] w-full max-w-xs overflow-hidden md:justify-self-start">
+              <img
+                src={`${import.meta.env.BASE_URL}assets/portrait.png`}
+                alt={`Portrait of ${profile.name}`}
+                className="size-full object-cover"
+              />
             </div>
           </div>
         </section>

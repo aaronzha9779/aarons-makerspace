@@ -14,7 +14,7 @@ export default {
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        body: ['"Cormorant Garamond"', 'serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       maxWidth: {

@@ -19,7 +19,7 @@ function ProjectCard({ project, index }) {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <p className="font-mono text-[10px] tracking-[0.16em] text-white/65">{project.idx} / {project.timeline}</p>
+        <p className="font-mono text-[10px] tracking-[0.16em] text-white/65">{project.idx}</p>
         <h2 className="mt-2 font-display text-2xl font-bold leading-tight">{project.title}</h2>
         <p className="mt-2 max-w-md text-sm text-white/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
           {project.caption || project.summary}
