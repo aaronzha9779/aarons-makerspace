@@ -35,7 +35,7 @@ export default function Portfolio() {
       <Nav />
       <main className="px-6 py-16 md:px-10 md:py-20">
         <div className="mb-16 max-w-2xl">
-          <h1 className="font-display text-5xl font-bold tracking-tight md:text-7xl">Portfolio</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight md:text-6xl">Portfolio</h1>
           <p className="mt-5 leading-relaxed text-inkdim">A working archive of things I build, draw, test, and put on the internet. Open any project for its purpose, creative process, specs, media, and timeline.</p>
         </div>
 
