@@ -11,11 +11,11 @@ export const portfolioCategories = [
 // Home page pins: change this list to choose and order the work shown in
 // the "Selected work" section. Use project slugs from the array below.
 export const selectedProjectSlugs = [
-  'flight-controller',
-  'gimbal',
-  'regen-braking-rig',
   'deagle',
-  'p3',
+  'm314',
+  'copy',
+  'solarb',
+  'swarmbot',
 ]
 
 export const projects = [
@@ -85,6 +85,23 @@ export const projects = [
     media: [
       { type: 'image', src: `${import.meta.env.BASE_URL}assets/swarmBot.png` },
       { type: 'image', src: `${import.meta.env.BASE_URL}assets/crossS.png` },
+    ],
+  },
+  {
+    slug: 'cardboard-creations',
+    idx: 'ENG-08',
+    category: 'engineering',
+    cover: `${import.meta.env.BASE_URL}assets/boxes.JPG`,
+    title: 'Cardboard Creations',
+    summary: 'A series of functional creations built from cardboard.',
+    caption: 'Cardboard Creations',
+    // Add the dates or milestones for this project here. It will appear in the Timeline section.
+    timeline: '',
+    link: null,
+    tags: ['Engineering'],
+    specs: {},
+    media: [
+      { type: 'image', src: `${import.meta.env.BASE_URL}assets/boxes.JPG` },
     ],
   },
   {

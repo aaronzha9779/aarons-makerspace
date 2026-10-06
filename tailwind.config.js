@@ -7,14 +7,14 @@ export default {
         bg: '#FFFFFF',
         surface: '#FFFFFF',
         ink: '#121212',
-        inkdim: '#484845',
+        inkdim: '#3F3F3B',
         orange: '#E8551D',
         orangedim: '#F4C9AE',
         rule: '#DEDBD3',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        body: ['Georgia', '"Times New Roman"', 'serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       maxWidth: {

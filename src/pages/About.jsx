@@ -21,16 +21,35 @@ export default function About() {
                 <p>{profile.statementPersonal}</p>
               </div>
             </div>
-            <div className="aspect-[3/4] w-full max-w-xs overflow-hidden md:justify-self-start">
-              <img
-                src={`${import.meta.env.BASE_URL}assets/portrait.png`}
-                alt={`Portrait of ${profile.name}`}
-                className="size-full object-cover"
-              />
+            <div className="w-full max-w-xs md:justify-self-start">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={`${import.meta.env.BASE_URL}assets/portrait.png`}
+                  alt={`Portrait of ${profile.name}`}
+                  className="size-full object-cover"
+                />
+              </div>
+              <p className="mt-2 font-mono text-[10px] tracking-[0.12em] text-inkdim">aaron zhang 2026</p>
             </div>
           </div>
         </section>
         <Interests />
+        <section className="border-b border-rule px-6 py-10 md:px-10">
+          <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+            <div>
+              <p className="font-mono text-xs text-orange">INSPIRATION</p>
+              <p className="mt-2 text-sm text-inkdim">Curious what inspires me? check out my collection of ideas, media, references, and things that keep me creating.</p>
+            </div>
+            <a
+              href="https://aaronzha9779.github.io/inspiration-site/#top"
+              target="_blank"
+              rel="noreferrer"
+              className="shrink-0 border border-ink px-4 py-2 font-mono text-xs transition-colors hover:border-orange hover:bg-orange hover:text-white"
+            >
+              visit inspiration site ↗
+            </a>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

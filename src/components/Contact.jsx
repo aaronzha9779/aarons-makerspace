@@ -3,7 +3,7 @@ import { profile } from '../data/profile.js'
 export default function Contact() {
   return (
     <section id="contact" className="px-6 md:px-10 py-24 scroll-mt-20">
-      <div className="max-w-xl">
+      <div className="mx-auto max-w-xl text-center">
         <h2 className="font-display font-bold text-2xl md:text-3xl mb-5">
           Building something, hiring, or got an idea?
         </h2>

@@ -7,6 +7,8 @@ export default function ProjectDetail() {
   const { slug } = useParams()
   const project = projects.find((p) => p.slug === slug)
   const specs = Object.entries(project?.specs || {})
+  const hasTimeline = project?.timeline && project.timeline !== '—'
+  const usesGalleryLayout = project?.slug === 'cardboard-creations'
 
   if (!project) {
     return (
@@ -31,12 +33,7 @@ export default function ProjectDetail() {
           &larr; back to portfolio
         </Link>
 
-        <div className="flex items-baseline gap-4 mt-8">
-          <span className="font-mono text-xs text-orange">{project.idx}</span>
-          <span className="font-mono text-xs text-inkdim">{project.timeline}</span>
-        </div>
-
-        <h1 className="font-display font-bold text-4xl md:text-5xl mt-3 mb-4">{project.title}</h1>
+        <h1 className="mt-8 mb-4 font-display text-4xl font-bold md:text-5xl">{project.title}</h1>
         <p className="text-inkdim text-base max-w-xl mb-4">{project.summary}</p>
         {project.link && (
           <a
@@ -51,7 +48,7 @@ export default function ProjectDetail() {
 
         <div className="flex gap-2 flex-wrap mb-10">
           {project.tags.map((tag) => (
-            <span key={tag} className="font-mono text-[10.5px] text-inkdim border border-rule px-2 py-1 rounded-sm">
+            <span key={tag} className="rounded-sm border border-rule px-3 py-1.5 font-mono text-xs text-inkdim">
               {tag}
             </span>
           ))}
@@ -73,6 +70,13 @@ export default function ProjectDetail() {
           <p className="mt-3 leading-relaxed text-inkdim">{project.purpose || project.summary}</p>
         </section>
 
+        {hasTimeline && (
+          <section className="mb-10 max-w-prose">
+            <h2 className="font-mono text-xs text-orange">TIMELINE</h2>
+            <p className="mt-3 leading-relaxed text-inkdim">{project.timeline}</p>
+          </section>
+        )}
+
         {project.notes && (
           <section className="mb-10 max-w-prose">
             <h2 className="font-mono text-xs text-orange">CREATIVE PROCESS</h2>
@@ -81,13 +85,15 @@ export default function ProjectDetail() {
         )}
 
         {project.media?.length > 0 && (
-          <section className="space-y-5">
+          <section>
             <h2 className="font-mono text-xs text-orange">MEDIA</h2>
-            {project.media.map((media) => (
-              media.type === 'video'
-                ? <video key={media.src} src={media.src} controls className="w-full rounded-sm" />
-                : <img key={media.src} src={media.src} alt="" className="w-full rounded-sm" />
-            ))}
+            <div className={usesGalleryLayout ? 'mt-5 columns-1 gap-4 sm:columns-2' : 'mt-5 space-y-5'}>
+              {project.media.map((media) => (
+                media.type === 'video'
+                  ? <video key={media.src} src={media.src} controls className={`w-full rounded-md ${usesGalleryLayout ? 'mb-4 break-inside-avoid' : ''}`} />
+                  : <img key={media.src} src={media.src} alt="" className={`w-full rounded-md ${usesGalleryLayout ? 'mb-4 break-inside-avoid' : ''}`} />
+              ))}
+            </div>
           </section>
         )}
       </div>
