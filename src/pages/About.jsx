@@ -9,12 +9,12 @@ export default function About() {
       <Nav />
       <main>
         <section className="px-6 md:px-10 py-16 md:py-24 border-b border-rule">
-          <div className="grid gap-8 md:grid-cols-[0.55fr,1.2fr,0.75fr] md:gap-8">
+          <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.55fr,1.2fr,0.75fr] md:gap-8">
             <div className="font-mono text-xs text-orange">01 / ABOUT</div>
             <div className="max-w-2xl">
               <p className="font-mono text-xs text-inkdim mb-5">{profile.location}</p>
               <h1 className="font-display font-bold text-4xl md:text-6xl leading-[0.95] tracking-tight">
-                Engineer in mind.<br />Artist at heart.
+                Engineer by trade.<br />Artist at heart.
               </h1>
               <div className="mt-10 space-y-5 text-inkdim leading-relaxed max-w-prose">
                 <p>{profile.statementProfessional}</p>
@@ -35,7 +35,7 @@ export default function About() {
         </section>
         <Interests />
         <section className="border-b border-rule px-6 py-10 md:px-10">
-          <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
             <div>
               <p className="font-mono text-xs text-orange">INSPIRATION</p>
               <p className="mt-2 text-sm text-inkdim">Curious what inspires me? check out my collection of ideas, media, references, and things that keep me creating.</p>

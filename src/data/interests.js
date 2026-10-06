@@ -1,5 +1,4 @@
-// Concentrations shown in the "Engineer / Artist" split section on the homepage.
-// `group` controls which side of the split it renders on: 'engineering' or 'art'.
+// Skills shown on the About page. `group` controls the column where each skill appears.
 
 export const interests = [
   {
@@ -17,7 +16,7 @@ export const interests = [
   {
     slug: 'calisthenics',
     label: 'Calisthenics',
-    group: 'engineering',
+    group: 'misc',
     depth: 'Load, leverage, and progression \u2014 mechanics applied to a body instead of a frame.',
   },
   {
@@ -29,13 +28,24 @@ export const interests = [
   {
     slug: 'piano',
     label: 'Piano',
-    group: 'art',
+    group: 'misc',
     depth: 'Classical training, now mostly improvisation and slow pieces.',
   },
   {
     slug: 'writing',
     label: 'Writing',
-    group: 'art',
+    group: 'misc',
     depth: 'Long-form notes and essays \u2014 thinking in public before it\u2019s finished.',
+  },
+]
+
+export const supplementalImages = [
+  {
+    src: `${import.meta.env.BASE_URL}assets/T1.png`,
+    alt: 'LEGO components and builds',
+  },
+  {
+    src: `${import.meta.env.BASE_URL}assets/T2.jpeg`,
+    alt: 'Teaching at a whiteboard',
   },
 ]

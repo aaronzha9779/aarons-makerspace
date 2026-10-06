@@ -8,7 +8,7 @@ export default function ContactPage() {
     <>
       <Nav />
       <main className="px-6 md:px-10 py-16 md:py-24">
-        <div className="grid lg:grid-cols-[1.35fr,0.65fr] gap-14 lg:gap-24 max-w-6xl">
+        <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[1.35fr,0.65fr] lg:gap-24">
           <section>
             <div className="font-mono text-xs text-orange mb-8">02 / CONTACT</div>
             <h1 className="font-display font-bold text-4xl md:text-6xl leading-[0.95] tracking-tight max-w-2xl">
