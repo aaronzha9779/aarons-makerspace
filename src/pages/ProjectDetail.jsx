@@ -28,7 +28,7 @@ export default function ProjectDetail() {
   return (
     <>
       <Nav />
-      <div className="px-6 md:px-10 py-16 max-w-3xl">
+      <div className={`px-6 md:px-10 py-16 ${usesGalleryLayout ? 'max-w-6xl' : 'max-w-3xl'}`}>
         <Link to="/work" className="font-mono text-xs text-inkdim hover:text-orange transition-colors">
           &larr; back to portfolio
         </Link>
@@ -65,10 +65,12 @@ export default function ProjectDetail() {
           </div>
         )}
 
-        <section className="mb-10 max-w-prose">
-          <h2 className="font-mono text-xs text-orange">PURPOSE</h2>
-          <p className="mt-3 leading-relaxed text-inkdim">{project.purpose || project.summary}</p>
-        </section>
+        {project.category !== 'visual-art' && (
+          <section className="mb-10 max-w-prose">
+            <h2 className="font-mono text-xs text-orange">PURPOSE</h2>
+            <p className="mt-3 leading-relaxed text-inkdim">{project.purpose || project.summary}</p>
+          </section>
+        )}
 
         {hasTimeline && (
           <section className="mb-10 max-w-prose">
@@ -87,12 +89,36 @@ export default function ProjectDetail() {
         {project.media?.length > 0 && (
           <section>
             <h2 className="font-mono text-xs text-orange">MEDIA</h2>
-            <div className={usesGalleryLayout ? 'mt-5 columns-1 gap-4 sm:columns-2' : 'mt-5 space-y-5'}>
-              {project.media.map((media) => (
-                media.type === 'video'
-                  ? <video key={media.src} src={media.src} controls className={`w-full rounded-md ${usesGalleryLayout ? 'mb-4 break-inside-avoid' : ''}`} />
-                  : <img key={media.src} src={media.src} alt="" className={`w-full rounded-md ${usesGalleryLayout ? 'mb-4 break-inside-avoid' : ''}`} />
-              ))}
+            <div className={usesGalleryLayout ? 'mt-5 columns-1 gap-4 sm:columns-2 lg:columns-3' : 'mt-5 space-y-5'}>
+              {project.media.map((media) => {
+                const hasCaptionSlot = Object.hasOwn(media, 'caption')
+                const mediaClassName = `w-full rounded-md ${usesGalleryLayout ? 'break-inside-avoid' : ''}`
+
+                return (
+                  <figure key={media.src} className={usesGalleryLayout ? 'group relative mb-4 break-inside-avoid' : ''}>
+                    {media.type === 'video'
+                      ? <video src={media.src} controls className={mediaClassName} />
+                      : (
+                        <div className={media.zoom ? 'overflow-hidden rounded-md' : ''}>
+                          <img
+                            src={media.src}
+                            alt={media.alt || ''}
+                            className={`${mediaClassName} ${media.zoom === 1.5 ? 'scale-150' : media.zoom === 0.75 ? 'scale-75' : ''}`}
+                          />
+                        </div>
+                      )}
+                    {hasCaptionSlot && (usesGalleryLayout ? (
+                      <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent px-4 pb-4 pt-10 font-mono text-xs leading-relaxed text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                        {media.caption}
+                      </figcaption>
+                    ) : (
+                      <figcaption className="min-h-6 mt-2 text-sm leading-relaxed text-inkdim">
+                        {media.caption}
+                      </figcaption>
+                    ))}
+                  </figure>
+                )
+              })}
             </div>
           </section>
         )}

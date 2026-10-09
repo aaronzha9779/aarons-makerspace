@@ -34,7 +34,7 @@ export default function Interests() {
         </div>
 
         <div className="mt-16 border-t border-rule pt-6">
-          <div className="grid max-w-md grid-cols-2 gap-4">
+          <div className="grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-5">
             {supplementalImages.map((image) => (
               <img key={image.src} src={image.src} alt={image.alt} className="aspect-square w-full rounded-md object-cover" />
             ))}

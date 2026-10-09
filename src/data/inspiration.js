@@ -1,5 +1,4 @@
-// Add your images to public/assets/inspiration/, then set an item's `image` URL.
-// Example: image: `${import.meta.env.BASE_URL}assets/inspiration/kinetic-sculpture.jpg`
+
 export const inspirationItems = [
   { title: 'motion studies', note: 'kinetic forms', image: null, size: 'large', tone: 'bg-[#3b4748]' },
   { title: 'material', note: 'rough edges', image: null, size: 'tall', tone: 'bg-[#614738]' },

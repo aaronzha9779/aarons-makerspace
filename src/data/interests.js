@@ -1,4 +1,3 @@
-// Skills shown on the About page. `group` controls the column where each skill appears.
 
 export const interests = [
   {
@@ -14,10 +13,16 @@ export const interests = [
     depth: 'Design-for-manufacture, from FDM prototypes to machined final parts.',
   },
   {
+    slug: 'programming',
+    label: 'Programming',
+    group: 'engineering',
+    depth: 'Building software, interactive tools, and embedded systems.',
+  },
+  {
     slug: 'calisthenics',
     label: 'Calisthenics',
     group: 'misc',
-    depth: 'Load, leverage, and progression \u2014 mechanics applied to a body instead of a frame.',
+    depth: 'Load, leverage, and progression, mechanics applied to a body instead of a frame.',
   },
   {
     slug: 'painting',
@@ -35,17 +40,29 @@ export const interests = [
     slug: 'writing',
     label: 'Writing',
     group: 'misc',
-    depth: 'Long-form notes and essays \u2014 thinking in public before it\u2019s finished.',
+    depth: 'Long-form notes and essays',
   },
 ]
 
 export const supplementalImages = [
   {
-    src: `${import.meta.env.BASE_URL}assets/T1.png`,
-    alt: 'LEGO components and builds',
+    src: `${import.meta.env.BASE_URL}assets/SK1.jpeg`,
+    alt: 'Skills section image 1',
   },
   {
-    src: `${import.meta.env.BASE_URL}assets/T2.jpeg`,
-    alt: 'Teaching at a whiteboard',
+    src: `${import.meta.env.BASE_URL}assets/SK2.jpeg`,
+    alt: 'Skills section image 2',
+  },
+  {
+    src: `${import.meta.env.BASE_URL}assets/SK3.png`,
+    alt: 'Skills section image 3',
+  },
+  {
+    src: `${import.meta.env.BASE_URL}assets/boxing.png`,
+    alt: 'Boxing',
+  },
+  {
+    src: `${import.meta.env.BASE_URL}assets/robo.jpeg`,
+    alt: 'Robotics',
   },
 ]
