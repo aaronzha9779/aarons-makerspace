@@ -88,8 +88,7 @@ export default function ProjectDetail() {
 
         {project.media?.length > 0 && (
           <section>
-            <h2 className="font-mono text-xs text-orange">MEDIA</h2>
-            <div className={usesGalleryLayout ? 'mt-5 columns-1 gap-4 sm:columns-2 lg:columns-3' : 'mt-5 space-y-5'}>
+            <div className={usesGalleryLayout ? 'columns-1 gap-4 sm:columns-2 lg:columns-3' : 'space-y-5'}>
               {project.media.map((media) => {
                 const hasCaptionSlot = Object.hasOwn(media, 'caption')
                 const mediaClassName = `w-full rounded-md ${usesGalleryLayout ? 'break-inside-avoid' : ''}`

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { profile } from '../data/profile.js'
+import Sketchbook from './Sketchbook.jsx'
 
 export default function Hero() {
   return (
@@ -15,23 +16,28 @@ export default function Hero() {
         ))}
       </div>
 
-      <h1 className="font-display font-bold text-[clamp(36px,6vw,72px)] leading-[1.05] tracking-tight max-w-3xl">
-        {profile.tagline}
-      </h1>
+      <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(340px,0.9fr)] lg:gap-16">
+        <div>
+          <h1 className="max-w-3xl font-display text-[clamp(36px,6vw,72px)] font-bold leading-[1.05] tracking-tight">
+            {profile.tagline}
+          </h1>
 
-      <div className="flex flex-wrap items-center gap-4 mt-9">
-        <Link
-          to="/work"
-          className="font-mono text-[13px] bg-orange text-white px-4 py-2.5 rounded-sm hover:opacity-90 transition-opacity"
-        >
-          See the work
-        </Link>
-        <Link
-          to="/about"
-          className="font-mono text-[13px] text-inkdim hover:text-ink transition-colors"
-        >
-          about me &rarr;
-        </Link>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <Link
+              to="/work"
+              className="rounded-sm bg-orange px-4 py-2.5 font-mono text-[13px] text-white transition-opacity hover:opacity-90"
+            >
+              See the work
+            </Link>
+            <Link
+              to="/about"
+              className="font-mono text-[13px] text-inkdim transition-colors hover:text-ink"
+            >
+              about me &rarr;
+            </Link>
+          </div>
+        </div>
+        <Sketchbook />
       </div>
 
       <div className="hidden md:block absolute right-10 bottom-8 font-mono text-[11px] text-inkdim text-right leading-loose">

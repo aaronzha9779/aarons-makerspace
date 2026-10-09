@@ -1,15 +1,22 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
+import ProjectModal from '../components/ProjectModal.jsx'
 import { portfolioCategories, projects } from '../data/projects.js'
 
 const coverColors = ['bg-[#354b4b]', 'bg-[#594335]', 'bg-[#3e3951]']
 
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, index, onOpen }) {
   const cardWidth = project.largeCard ? 'xl:col-span-8' : project.mediumCard ? 'xl:col-span-5' : 'xl:col-span-4'
 
   return (
-    <Link to={`/work/${project.slug}`} className={`group relative mb-4 block self-start break-inside-avoid overflow-hidden rounded-md ${cardWidth}`}>
+    <button
+      type="button"
+      onClick={() => onOpen(project)}
+      aria-label={`Open ${project.title} project preview`}
+      aria-haspopup="dialog"
+      className={`group relative mb-4 block self-start break-inside-avoid overflow-hidden rounded-md text-left ${cardWidth}`}
+    >
       {project.cover ? (
         project.coverType === 'video' ? (
           <video
@@ -34,15 +41,17 @@ function ProjectCard({ project, index }) {
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
         <h2 className="font-display text-2xl font-bold leading-tight">{project.title}</h2>
         <p className="mt-2 max-w-md font-mono text-sm text-white/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
-          {project.caption || project.summary}
+          {project.caption || project.title}
         </p>
       </div>
-    </Link>
+    </button>
   )
 }
 
 
 export default function Portfolio() {
+  const [activeProject, setActiveProject] = useState(null)
+
   return (
     <>
       <Nav />
@@ -65,7 +74,7 @@ export default function Portfolio() {
                 </div>
                 {categoryProjects.length ? (
                   <div className={usesGridLayout ? 'grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-[repeat(16,minmax(0,1fr))]' : 'columns-1 gap-4 md:columns-2 xl:columns-4'}>
-                    {categoryProjects.map((project, index) => <ProjectCard key={project.slug} project={project} index={index} />)}
+                    {categoryProjects.map((project, index) => <ProjectCard key={project.slug} project={project} index={index} onOpen={setActiveProject} />)}
                   </div>
                 ) : (
                   <div className="flex min-h-56 items-end border border-dashed border-rule bg-surface p-5 font-mono text-xs text-inkdim">
@@ -77,6 +86,7 @@ export default function Portfolio() {
           })}
         </div>
       </main>
+      <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
       <Footer />
     </>
   )

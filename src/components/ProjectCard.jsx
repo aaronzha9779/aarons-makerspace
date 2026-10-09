@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 const fallbackTones = ['bg-[#354b4b]', 'bg-[#594335]', 'bg-[#3e3951]']
 
 export default function ProjectCard({ project }) {
@@ -7,9 +5,11 @@ export default function ProjectCard({ project }) {
   const caption = project.caption || project.title
 
   return (
-    <Link
-      to={`/work/${project.slug}`}
-      aria-label={`Read the full ${project.title} project writeup`}
+    <button
+      type="button"
+      onClick={() => project.onOpen?.(project)}
+      aria-label={`Open ${project.title} project preview`}
+      aria-haspopup="dialog"
       className="group relative block aspect-[4/3] overflow-hidden rounded-md"
     >
       {project.cover ? (
@@ -39,6 +39,6 @@ export default function ProjectCard({ project }) {
           <p className="mt-2 font-mono text-sm leading-relaxed text-white/85">{caption}</p>
         </div>
       </div>
-    </Link>
+    </button>
   )
 }

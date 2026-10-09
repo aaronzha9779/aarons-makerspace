@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Hero from '../components/Hero.jsx'
@@ -5,9 +6,11 @@ import Experience from '../components/Experience.jsx'
 import Contact from '../components/Contact.jsx'
 import Footer from '../components/Footer.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
+import ProjectModal from '../components/ProjectModal.jsx'
 import { projects, selectedProjectSlugs } from '../data/projects.js'
 
 export default function Home() {
+  const [activeProject, setActiveProject] = useState(null)
   const featured = selectedProjectSlugs
     .map((slug) => projects.find((project) => project.slug === slug))
     .filter(Boolean)
@@ -29,10 +32,12 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
+            <ProjectCard key={p.slug} project={{ ...p, onOpen: setActiveProject }} />
           ))}
         </div>
       </section>
+
+      <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
 
       <Experience />
       <Contact />
