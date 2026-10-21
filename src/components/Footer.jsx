@@ -1,5 +1,6 @@
 import { profile } from '../data/profile.js'
 import { SocialIcon } from './Icons.jsx'
+import ColorToggle from './ColorToggle.jsx'
 
 export default function Footer() {
   return (
@@ -22,11 +23,7 @@ export default function Footer() {
            
         </div>
       </div>
-      <img
-        src={`${import.meta.env.BASE_URL}assets/duckie.png`}
-        alt="Duckie logo"
-        className="size-12 self-end object-contain sm:size-14 sm:self-auto"
-      />
+      <ColorToggle />
     </footer>
   )
 }

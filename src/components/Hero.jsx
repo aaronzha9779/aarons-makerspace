@@ -25,7 +25,7 @@ export default function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link
               to="/work"
-              className="rounded-sm bg-orange px-4 py-2.5 font-mono text-[13px] text-white transition-opacity hover:opacity-90"
+              className="rounded-sm bg-orange px-4 py-2.5 font-mono text-[13px] text-bg transition-opacity hover:opacity-90"
             >
               See the work
             </Link>

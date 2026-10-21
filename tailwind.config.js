@@ -4,13 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#FFFFFF',
-        surface: '#FFFFFF',
-        ink: '#121212',
-        inkdim: '#3F3F3B',
+        bg: 'rgb(var(--color-bg) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
+        inkdim: 'rgb(var(--color-inkdim) / <alpha-value>)',
         orange: '#E8551D',
         orangedim: '#F4C9AE',
-        rule: '#DEDBD3',
+        rule: 'rgb(var(--color-rule) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],

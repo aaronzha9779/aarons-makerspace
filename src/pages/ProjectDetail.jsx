@@ -7,7 +7,6 @@ export default function ProjectDetail() {
   const { slug } = useParams()
   const project = projects.find((p) => p.slug === slug)
   const specs = Object.entries(project?.specs || {})
-  const hasTimeline = project?.timeline && project.timeline !== '—'
   const usesGalleryLayout = project?.slug === 'cardboard-creations'
 
   if (!project) {
@@ -65,20 +64,6 @@ export default function ProjectDetail() {
           </div>
         )}
 
-        {project.category !== 'visual-art' && (
-          <section className="mb-10 max-w-prose">
-            <h2 className="font-mono text-xs text-orange">PURPOSE</h2>
-            <p className="mt-3 leading-relaxed text-inkdim">{project.purpose || project.summary}</p>
-          </section>
-        )}
-
-        {hasTimeline && (
-          <section className="mb-10 max-w-prose">
-            <h2 className="font-mono text-xs text-orange">TIMELINE</h2>
-            <p className="mt-3 leading-relaxed text-inkdim">{project.timeline}</p>
-          </section>
-        )}
-
         {project.notes && (
           <section className="mb-10 max-w-prose">
             <h2 className="font-mono text-xs text-orange">CREATIVE PROCESS</h2>
@@ -107,7 +92,7 @@ export default function ProjectDetail() {
                         </div>
                       )}
                     {hasCaptionSlot && (usesGalleryLayout ? (
-                      <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent px-4 pb-4 pt-10 font-mono text-xs leading-relaxed text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                      <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 via-ink/45 to-transparent px-4 pb-4 pt-10 font-mono text-xs leading-relaxed text-bg/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                         {media.caption}
                       </figcaption>
                     ) : (

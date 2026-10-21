@@ -50,7 +50,7 @@ function ExperienceGallery({ items, role }) {
                 <img src={item.src} alt={item.label} className="size-full object-cover" />
               )}
               {item.caption && (
-                <span className="absolute inset-x-0 bottom-0 bg-black/75 px-3 py-2 font-mono text-[11px] leading-snug text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+                <span className="absolute inset-x-0 bottom-0 bg-ink/75 px-3 py-2 font-mono text-[11px] leading-snug text-bg opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
                   {item.caption}
                 </span>
               )}
@@ -64,14 +64,14 @@ function ExperienceGallery({ items, role }) {
           role="dialog"
           aria-modal="true"
           aria-label={expandedItem.label}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 p-6"
           onClick={() => setExpandedIndex(null)}
         >
           <div className="relative max-h-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
             <button
               type="button"
               onClick={() => setExpandedIndex(null)}
-              className="absolute right-3 top-3 z-10 rounded-sm bg-black/70 px-3 py-2 font-mono text-xs text-white hover:bg-orange"
+              className="absolute right-3 top-3 z-10 rounded-sm bg-ink/70 px-3 py-2 font-mono text-xs text-bg hover:bg-orange"
             >
               Close
             </button>

@@ -44,7 +44,7 @@ export default function About() {
               href="https://aaronzha9779.github.io/inspiration-site/#top"
               target="_blank"
               rel="noreferrer"
-              className="shrink-0 border border-ink px-4 py-2 font-mono text-xs transition-colors hover:border-orange hover:bg-orange hover:text-white"
+              className="shrink-0 border border-ink px-4 py-2 font-mono text-xs transition-colors hover:border-orange hover:bg-orange hover:text-bg"
             >
               visit inspiration site ↗
             </a>

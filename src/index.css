@@ -2,12 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-bg: 255 255 255;
+  --color-surface: 255 255 255;
+  --color-ink: 18 18 18;
+  --color-inkdim: 63 63 59;
+  --color-rule: 222 219 211;
+}
+
+html.color-inverted {
+  --color-bg: 18 18 18;
+  --color-surface: 18 18 18;
+  --color-ink: 255 255 255;
+  --color-inkdim: 210 210 206;
+  --color-rule: 79 79 75;
+}
+
+.theme-logo-inverted {
+  display: none;
+}
+
+html.color-inverted .theme-logo-default {
+  display: none;
+}
+
+html.color-inverted .theme-logo-inverted {
+  display: block;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: Georgia, 'Times New Roman', serif;
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-ink));
   -webkit-font-smoothing: antialiased;
 }
 

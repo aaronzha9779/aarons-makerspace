@@ -4,19 +4,31 @@ export const interests = [
     slug: 'embedded-systems',
     label: 'Embedded systems',
     group: 'engineering',
-    depth: 'Firmware, control loops, and the boards underneath them.',
+    depth: 'Arduino/ESP32, C++, microcontrollers, sensor I/O, real-time feedback',
+  },
+  {
+    slug: 'controls',
+    label: 'Controls',
+    group: 'engineering',
+    depth: 'PID control, SLAM, localization, autonomous navigation',
   },
   {
     slug: 'cad-fabrication',
-    label: 'CAD + fabrication',
+    label: 'Fabrication',
     group: 'engineering',
-    depth: 'Design-for-manufacture, from FDM prototypes to machined final parts.',
+    depth: 'CAD, 3D printing, Soldering, PCB design, Soft robotics',
   },
   {
     slug: 'programming',
     label: 'Programming',
     group: 'engineering',
-    depth: 'Building software, interactive tools, and embedded systems.',
+    depth: 'Python, C++, MATLAB, JavaScript, Java, HTML/CSS, TypeScript',
+  },
+  {
+    slug: 'web-development',
+    label: 'Web Development',
+    group: 'engineering',
+    depth: 'React, Node.js, REST APIs, UI/UX',
   },
   {
     slug: 'calisthenics',
@@ -25,9 +37,14 @@ export const interests = [
     depth: 'Load, leverage, and progression, mechanics applied to a body instead of a frame.',
   },
   {
-    slug: 'painting',
-    label: 'Painting',
-    group: 'art',
+    slug: 'mma-boxing',
+    label: 'MMA / Boxing',
+    group: 'misc',
+  },
+  {
+    slug: 'painting-drawing',
+    label: 'Painting / Drawing',
+    group: 'misc',
     depth: 'Mostly oil and gouache studies; color and value before detail.',
   },
   {

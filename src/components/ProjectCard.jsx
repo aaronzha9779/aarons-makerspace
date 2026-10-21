@@ -10,7 +10,7 @@ export default function ProjectCard({ project }) {
       onClick={() => project.onOpen?.(project)}
       aria-label={`Open ${project.title} project preview`}
       aria-haspopup="dialog"
-      className="group relative block aspect-[4/3] overflow-hidden rounded-md"
+      className="group relative block aspect-[4/3] overflow-hidden rounded-md border-0 p-0 text-left"
     >
       {project.cover ? (
         project.coverType === 'video' ? (
@@ -33,10 +33,10 @@ export default function ProjectCard({ project }) {
         <div className={`size-full ${fallbackTone}`} aria-hidden="true" />
       )}
 
-      <div className="absolute inset-0 flex items-end bg-black/65 p-5 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <div className="absolute inset-0 flex items-end bg-ink/65 p-5 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
         <div>
-          <h3 className="font-display text-xl font-bold leading-tight text-white">{project.title}</h3>
-          <p className="mt-2 font-mono text-sm leading-relaxed text-white/85">{caption}</p>
+          <h3 className="font-display text-xl font-bold leading-tight text-bg">{project.title}</h3>
+          <p className="mt-2 font-mono text-sm leading-relaxed text-bg/85">{caption}</p>
         </div>
       </div>
     </button>

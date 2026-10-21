@@ -37,10 +37,10 @@ function ProjectCard({ project, index, onOpen }) {
       ) : (
         <div className={`aspect-[4/3] ${coverColors[index % coverColors.length]}`} />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 p-5 text-bg">
         <h2 className="font-display text-2xl font-bold leading-tight">{project.title}</h2>
-        <p className="mt-2 max-w-md font-mono text-sm text-white/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+        <p className="mt-2 max-w-md font-mono text-sm text-bg/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
           {project.caption || project.title}
         </p>
       </div>

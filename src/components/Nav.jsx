@@ -7,11 +7,18 @@ export default function Nav() {
     <nav className="flex justify-between items-center gap-4 px-4 py-3 md:gap-6 md:px-10 md:py-4 border-b border-rule bg-bg/90 backdrop-blur sticky top-0 z-30">
       <Link to="/" className="flex min-w-0 flex-1 items-center gap-2 md:gap-3 font-display font-bold text-lg tracking-tight">
         {profile.logoUrl ? (
-          <img
-            src={profile.logoUrl}
-            alt={`${profile.name} logo`}
-            className="relative -top-1 size-14 shrink-0 rounded-sm object-contain md:size-16"
-          />
+          <>
+            <img
+              src={profile.logoUrl}
+              alt={`${profile.name} logo`}
+              className="theme-logo-default relative -top-1 size-14 shrink-0 rounded-sm object-contain md:size-16"
+            />
+            <img
+              src={`${import.meta.env.BASE_URL}assets/logoW.png`}
+              alt={`${profile.name} logo`}
+              className="theme-logo-inverted relative -top-1 size-14 shrink-0 rounded-sm object-contain md:size-16"
+            />
+          </>
         ) : (
           <span
             aria-hidden="true"

@@ -1,4 +1,5 @@
 import Nav from '../components/Nav.jsx'
+import Footer from '../components/Footer.jsx'
 import { inspirationItems } from '../data/inspiration.js'
 
 const sizes = {
@@ -12,13 +13,13 @@ export default function Inspiration() {
   return (
     <>
       <Nav />
-      <main className="min-h-screen bg-[#090909] px-4 py-10 text-white md:px-10 md:py-14">
-        <div className="mb-10 flex flex-col justify-between gap-5 border-b border-white/20 pb-6 md:flex-row md:items-end">
+      <main className="min-h-screen bg-ink px-4 py-10 text-bg md:px-10 md:py-14">
+        <div className="mb-10 flex flex-col justify-between gap-5 border-b border-bg/20 pb-6 md:flex-row md:items-end">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-orange">Field notes / 01</p>
             <h1 className="mt-3 font-display text-5xl font-bold tracking-tight md:text-7xl">Inspiration</h1>
           </div>
-          <p className="max-w-sm font-mono text-xs leading-relaxed text-white/60">
+          <p className="max-w-sm font-mono text-xs leading-relaxed text-bg/60">
             A growing index of images, objects, colors, and systems I keep returning to.
           </p>
         </div>
@@ -30,22 +31,23 @@ export default function Inspiration() {
                 <img src={item.image} alt={item.title} className="size-full object-cover transition duration-500 group-hover:scale-105" />
               ) : (
                 <div className={`flex size-full flex-col justify-between p-3 ${item.tone}`}>
-                  <span className="font-mono text-[10px] text-white/60">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="font-mono text-[10px] text-bg/60">{String(index + 1).padStart(2, '0')}</span>
                   <div>
                     <p className="font-display text-xl font-bold leading-none md:text-2xl">{item.title}</p>
-                    <p className="mt-1 font-mono text-[10px] text-white/65">{item.note}</p>
+                    <p className="mt-1 font-mono text-[10px] text-bg/65">{item.note}</p>
                   </div>
                 </div>
               )}
-              <div className="pointer-events-none absolute inset-0 border border-white/10 transition group-hover:border-orange" />
+              <div className="pointer-events-none absolute inset-0 border border-bg/10 transition group-hover:border-orange" />
             </article>
           ))}
         </section>
 
-        <p className="mt-8 font-mono text-[11px] leading-relaxed text-white/45">
+        <p className="mt-8 font-mono text-[11px] leading-relaxed text-bg/45">
           Add your own images in <code>public/assets/inspiration/</code>, then connect them in <code>src/data/inspiration.js</code>.
         </p>
       </main>
+      <Footer />
     </>
   )
 }

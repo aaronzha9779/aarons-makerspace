@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 export default function ProjectModal({ project, onClose }) {
   const usesGalleryLayout = project?.slug === 'cardboard-creations'
   const specs = Object.entries(project?.specs || {})
-  const hasTimeline = project?.timeline && project.timeline !== '—'
 
   useEffect(() => {
     if (!project) return undefined
@@ -33,7 +32,7 @@ export default function ProjectModal({ project, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-modal-title"
-        className="relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-[1.5rem] border border-white/70 bg-bg shadow-[0_30px_80px_rgba(18,18,18,0.28)]"
+        className="relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-[1.5rem] border border-bg/70 bg-bg shadow-[0_30px_80px_rgba(18,18,18,0.28)]"
         onMouseDown={(event) => event.stopPropagation()}
       >
         <button
@@ -46,21 +45,29 @@ export default function ProjectModal({ project, onClose }) {
         </button>
 
         <div className="overflow-y-auto px-6 pb-10 pt-16 md:px-12 md:pb-14 md:pt-20">
-          <div className="mb-10 max-w-3xl">
-            <h2 id="project-modal-title" className="font-display text-4xl font-bold leading-none tracking-tight md:text-6xl">
-              {project.title}
-            </h2>
-            {project.summary && <p className="mt-5 max-w-2xl leading-relaxed text-inkdim">{project.summary}</p>}
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 inline-block font-mono text-xs underline underline-offset-4 transition-colors hover:text-orange"
-              >
-                {project.linkLabel || 'View project'} ↗
-              </a>
-            )}
+          <div className="mb-10 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+            <div className="max-w-3xl">
+              <h2 id="project-modal-title" className="font-display text-4xl font-bold leading-none tracking-tight md:text-6xl">
+                {project.title}
+              </h2>
+              {project.summary && <p className="mt-5 max-w-2xl leading-relaxed text-inkdim">{project.summary}</p>}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 inline-block font-mono text-xs underline underline-offset-4 transition-colors hover:text-orange"
+                >
+                  {project.linkLabel || 'View project'} ↗
+                </a>
+              )}
+            </div>
+            <div className="shrink-0 md:mr-20 md:pt-2">
+              <p className="font-mono text-[10px] tracking-[0.14em] text-inkdim">YEAR</p>
+              <p className="mt-2 font-mono text-sm text-ink">
+                {project.timeline && project.timeline !== '—' ? project.timeline : '—'}
+              </p>
+            </div>
           </div>
 
           {project.tags?.length > 0 && (
@@ -84,20 +91,6 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
-          {project.category !== 'visual-art' && project.summary && (
-            <section className="mb-10 max-w-prose">
-              <h3 className="font-mono text-xs text-orange">PURPOSE</h3>
-              <p className="mt-3 leading-relaxed text-inkdim">{project.purpose || project.summary}</p>
-            </section>
-          )}
-
-          {hasTimeline && (
-            <section className="mb-10 max-w-prose">
-              <h3 className="font-mono text-xs text-orange">TIMELINE</h3>
-              <p className="mt-3 leading-relaxed text-inkdim">{project.timeline}</p>
-            </section>
-          )}
-
           {project.notes && (
             <section className="mb-10 max-w-prose">
               <h3 className="font-mono text-xs text-orange">CREATIVE PROCESS</h3>
@@ -106,7 +99,7 @@ export default function ProjectModal({ project, onClose }) {
           )}
 
           {project.media?.length > 0 && (
-            <div className={usesGalleryLayout ? 'mx-auto max-w-4xl columns-1 gap-4 sm:columns-2 lg:columns-3' : 'mx-auto max-w-3xl space-y-5'}>
+            <div className={usesGalleryLayout ? 'mx-auto max-w-[42rem] columns-1 gap-4 sm:columns-2 lg:columns-3' : 'mx-auto max-w-[36rem] space-y-5'}>
               {project.media.map((media) => {
                 const hasCaptionSlot = Object.hasOwn(media, 'caption')
                 const mediaClassName = `w-full rounded-md ${usesGalleryLayout ? 'break-inside-avoid' : ''}`
@@ -125,7 +118,7 @@ export default function ProjectModal({ project, onClose }) {
                         </div>
                       )}
                     {hasCaptionSlot && (usesGalleryLayout ? (
-                      <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent px-4 pb-4 pt-10 font-mono text-xs leading-relaxed text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                      <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 via-ink/45 to-transparent px-4 pb-4 pt-10 font-mono text-xs leading-relaxed text-bg/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                         {media.caption}
                       </figcaption>
                     ) : (
