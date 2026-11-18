@@ -5,7 +5,7 @@ export const portfolioCategories = [
   { id: 'apps', title: 'Apps/Tools', description: 'Digital tools, interfaces, and small internet artifacts.' },
 ]
 export const selectedProjectSlugs = [
-  'deagle',
+  'm314',
   'p3',
   'swarmbot',
 ]
@@ -37,10 +37,11 @@ export const projects = [
     slug: 'm314',
     idx: 'ENG-05',
     category: 'engineering',
-    cover: `${import.meta.env.BASE_URL}assets/m314sh1.png`,
+    cover: `${import.meta.env.BASE_URL}assets/m314sh12.png`,
+    largeHomeCard: true,
     title: 'M314 motion tracker',
     summary: 'An Aliens-inspired motion tracker that turns proximity sensing into real-time audio and visual feedback.',
-    caption: 'WIP',
+    caption: 'Finished M314 Motion Tracker',
     timeline: '2026',
     link: null,
     tags: ['3D Design/CAD', 'Mechanical Design', 'Prototyping', 'Embedded systems', 'Sensor I/O', 'C++', 'Fabrication', 'Soldering', ],

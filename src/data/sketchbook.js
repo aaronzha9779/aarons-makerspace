@@ -1,11 +1,15 @@
 export const sketchbookPages = [
   {
-    src: `${import.meta.env.BASE_URL}assets/deagle%20bp.png`,
-    alt: 'Desert Eagle blueprint',
+    src: `${import.meta.env.BASE_URL}assets/m314sh1.png`,
+    alt: 'Finished M314 motion tracker',
   },
   {
     src: `${import.meta.env.BASE_URL}assets/m314sh12.png`,
     alt: 'M314 motion tracker build',
+  },
+  {
+    src: `${import.meta.env.BASE_URL}assets/deagle%20bp.png`,
+    alt: 'Desert Eagle blueprint',
   },
   {
     src: `${import.meta.env.BASE_URL}assets/pygmalion.png`,

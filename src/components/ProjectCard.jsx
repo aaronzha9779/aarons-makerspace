@@ -10,7 +10,7 @@ export default function ProjectCard({ project }) {
       onClick={() => project.onOpen?.(project)}
       aria-label={`Open ${project.title} project preview`}
       aria-haspopup="dialog"
-      className="group relative block aspect-[4/3] overflow-hidden rounded-md border-0 p-0 text-left"
+      className={`group relative block aspect-[4/3] overflow-hidden rounded-md border-0 p-0 text-left ${project.largeHomeCard ? 'lg:col-span-2' : ''}`}
     >
       {project.cover ? (
         project.coverType === 'video' ? (
