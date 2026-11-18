@@ -66,7 +66,7 @@ export default function Portfolio() {
             const categoryProjects = projects
               .filter((project) => project.category === category.id)
               .sort((a, b) => (a.galleryOrder || 0) - (b.galleryOrder || 0))
-            const usesGridLayout = category.id === 'apps'
+            const usesGridLayout = category.id === 'apps' || category.id === 'engineering'
             return (
               <section key={category.id} className="border-t-2 border-ink pt-5">
                 <div className="mb-6">
